@@ -54,7 +54,11 @@ public class JavaNotesProfessional {
         velocity.setSpeedy(3);
         velocity.setDistance(12);
         velocity.calculateTimeTravel();
-        System.out.println("Time to travel for " + velocity.getDistance() + "m is: " + velocity.getTime() + "segundos");
+        System.out.println("Time to travel for " + velocity.getDistance() + "m is: " + velocity.getTime() + " segundos");
+        
+        /*
+        
+        */
         
     }
 }
