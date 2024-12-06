@@ -11,10 +11,161 @@ import com.mycompany.learninterface.LearnInterface.Operaciones;
  * @author JOHN
  */
 /*
-En Java, una interfaz define un contrato que las clases que la implementen deben seguir. 
-Es una forma de declarar métodos que deben ser implementados por las clases, sin definir el comportamiento de esos métodos. 
-Las interfaces son fundamentales en la programación orientada a objetos para garantizar que diferentes clases sigan una 
-estructura común sin importar cómo implementen el código interno.
+    En Java, una interfaz define un contrato que las clases que la implementen deben seguir.
+    Es una forma de declarar métodos que deben ser implementados por las clases,
+    sin definir el comportamiento de esos métodos.
+
+    Las interfaces son fundamentales en la programación orientada a objetos para garantizar que
+    diferentes clases sigan una estructura común sin importar cómo implementen el código interno.
+
+    Syntax:
+        interface InterfaceName {
+        // Abstract method
+        void methodName();
+
+        // Constant
+        int CONSTANT_VALUE = 100;
+    }
+
+    Example:
+        interface Animal {
+        void sound(); // Abstract method
+        void eat();   // Abstract method
+    }
+
+    Functional Interface
+    A functional interface is an interface with only one abstract method.
+    Java 8 introduced lambda expressions, which make functional interfaces concise and easy to use.
+    Functional interfaces can also have multiple default or static methods.
+
+    Example:
+
+    @FunctionalInterface
+    interface Calculator{
+        int add(int x, int y);
+    }
+
+    Maker Interface
+
+    A marker interface is an empty interface (without methods or fields).
+    It is used to signal the Java runtime or other code to treat the objects of the implementing class
+    in a special way.
+
+    Example:
+
+    - `Serializable`: Marks a class as serializable.
+
+    - `Cloneable`: Marks a class as capable of being cloned.
+
+    Syntax:
+        class ClassName implements InterfaceName {
+            @Override
+            public void methodName() {
+                // Implementation of the method
+            }
+        }
+
+    Ouput
+        interface Animal {
+            void sound();
+            void eat();
+        }
+
+        class Dog implements Animal {
+            @Override
+            public void sound() {
+                System.out.println("Dog barks");
+            }
+
+            @Override
+            public void eat() {
+                System.out.println("Dog eats");
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Dog dog = new Dog();
+                dog.sound();
+                dog.eat();
+            }
+        }
+
+    A functional interface is an interface with a single abstract method. Functional interfaces can have any number of default or static methods, but they can only have one abstract method. These interfaces are the foundation for lambda expressions in Java.
+
+    Key Functional Interfaces in Java:
+
+    - Runnable: Represents a task to be executed by a thread.
+
+    - Callable: Represents a task that returns a result.
+
+    - Comparator: Represents a comparison function, which compares two objects.
+
+    - Supplier, Consumer, Predicate, and Function: Used in Java’s functional programming paradigm.
+
+    Example Using a Functional Interface:
+
+    @FunctionalInterface
+    interface Greeting {
+        void sayHello();
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            // Using a lambda expression to implement the interface
+            Greeting greeting = () -> System.out.println("Hello, World!");
+            greeting.sayHello();
+        }
+    }
+
+    Output:
+
+    Hello, World!
+
+    Use Cases of Interfaces
+
+    - Defining APIs: Interfaces are often used to define APIs in frameworks,
+     such as Java’s Collection Framework.
+
+    - Multiple Inheritance: Java doesn’t support multiple inheritance for classes,
+     but a class can implement multiple interfaces, allowing for multiple inheritance of behaviors.
+
+    - Callback Mechanisms: Interfaces are often used in event-driven programming
+     (e.g., listeners in GUI frameworks like Swing and Android).
+
+    - Polymorphism: Interfaces enable polymorphism, allowing different objects to be treated
+    as instances of the interface type, improving code flexibility
+    .
+    Example of Multiple Inheritance via Interfaces:
+
+    interface Printable {
+        void print();
+    }
+
+    interface Showable {
+        void show();
+    }
+
+    class Demo implements Printable, Showable {
+        @Override
+        public void print() {
+            System.out.println("Printing...");
+        }
+
+        @Override
+        public void show() {
+            System.out.println("Showing...");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Demo obj = new Demo();
+            obj.print();
+            obj.show();
+        }
+    }
+
 */
 
 public class LearnInterface {
