@@ -9,16 +9,24 @@ import java.util.Map;
 public class FamilyTree {
     private String nameFamily;
     private Long id;
-    private Map< Long, List<Person> > people;
 
-    public FamilyTree(Long id, String nameFamily) {
+    public FamilyTree(String nameFamily) {
         this.nameFamily = nameFamily;
-        this.people = new HashMap<>();
+    }
+
+    public String getNameFamily() {
+        return nameFamily;
+    }
+
+    public void setNameFamily(String nameFamily) {
+        this.nameFamily = nameFamily;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
-
-    public void addRelationShip(List<Person> persons){
-        people.put(this.id, persons);
-    }
-
 }
